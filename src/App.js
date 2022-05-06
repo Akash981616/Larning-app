@@ -1,21 +1,19 @@
 import React from "react"
-import "./App.css"
-import { store } from "./store/Store"
-import {Provider} from "react-redux"
-import Form2 from "./component/Form2"
+import { Route } from "react-router-dom";
+import "./App.css";
 
-
-store.subscribe(()=>console.log(store))
+import { Home } from "./pages/Home";
+import { ChatPage } from "../src/pages/ChatPage";
 const App = () => {
    
   return (
-    <div>
-    <h1>Redux</h1>
-  
-    <Form2/>
+    <div className="App">
+ 
+   <Route path="/" component={Home} exact/>
+   <Route path="/chat" component={ChatPage} />
 
     </div>
-  )
+  );
 }
 
 export default App
